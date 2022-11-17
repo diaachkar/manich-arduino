@@ -4,20 +4,4 @@ Engineering materials of our Manich self-driven vehicle's model participating in
 arduino uno, battery, the model consisted of two bases, an extension board, cables, 4 motors, color sensors, ultrasonic sensor, 4 wheels, a H bridge, and a camera.
 
 ## Introduction
-In the beginning of the program, we used two integers to stock the number of the pin in the two variable that we named it "motor1" and "motor2" . Then in the void setup, a function that run only once in the beginning, we put the serial begin at 9600 bits, the rate of the connection. We wrote the mode of the first and second motor, that is output, because we are gonna precise later the value of the speed. In the void loop, a function that is on repeat all the time, we wrote analogue write for each of our motors at the speed of 255 so the robot can run a straight line.
-To build the robot, we started by putting the four motors, the battery and the color sensor in the base. Then we put the wheels on the motors. In the upper model, we put the arduino uno and connected the cables to the pins. We also added an ultrasonic sensor, and a camera on the top of the motor, and an extension board for more cables. 
-To connect the software to the hardware, we put a cable then selected in the tools the type of the arduino, an arduino uno, and selected the port and finally uploaded the code in the robot.
-
-## The code 
-int motor1= 4;
-int motor2 =2;
-void setup() {
-  Serial.begin (9600);
-  pinMode (motor1,OUTPUT);
-  pinMode (motor2, OUTPUT);
-}
-
-void loop() {
-  analogWrite (motor1, 255);
-  analogWrite (motor2, 255);
-}
+In order to creat an autonomus AI, it must become independent from humans. We followed this concept to try and creat a car that does not requier human aid. We develloped our project by keeping in mind that this car should function in any cituation. So what was our idea? Its very simmple an ultra sonic sensor at the front to detect a wall and another one at a random side of the car(right or left). The sensor on the front is used ro detect any obstacel that may be infront of the vehicle while the other one is used to detect the distance between the car and another obstacle. So let's say the vehicul has to turn because he detected a wall infront of him(using the sensor at the front), he will proceed by checking the value of the other sensor, if the value is lets say less than 5 meters (in our case centimeters) the car will turn in the opposit direction of the sensor and if the value would be above 5 meters it will turn in the direction of the sensor. Now you might ask why didn't just put another sensor one on each side, well we kept in mind that in case of production a producer would want to reduce the cost of production wich in this case to reduce the amount of part to the essencial. So this is basicaly our entire project, what are you're thoughts?
